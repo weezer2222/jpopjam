@@ -1,0 +1,285 @@
+body{
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: normal;
+    color: #000;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    background-color: #fff;
+}
+
+
+a:hover, a:active{
+    color: #ccc;
+    text-decoration: none;
+}
+
+a:hover img, a:active img{
+  text-decoration: none;
+	opacity: 0.7;
+}
+
+
+/* header -------------------------------------------------*/
+header{
+  width: 100%;
+  height: 60px;
+  position: relative;
+  opacity: 1;
+  /* z-index: 50; */
+}
+/*
+header h1{
+    width: 230px;
+    height: 60px;
+    background-color: #FDD007;
+    margin: 23px auto 20px;
+    transform: translateX(-20px);
+    padding: 0 1px;
+    font-family: "Rounded Mplus 1c";
+    font-size: 26px;
+    font-weight: 500;
+
+    letter-spacing: 0.1rem;
+    padding-bottom: 2px;
+    transform: translate(20px);
+} */
+
+/* header h1 a{
+  text-decoration: none;
+  color: #4c4747;
+} */
+
+header nav{
+  width: 100%;
+  height: 60px;
+  background-color: #FDD007;
+}
+
+header nav .container{
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+
+}
+
+header nav ul{
+    width: 846.49px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+header nav ul li a{
+  display: block; /* リンク領域を広げる */
+  padding: 0 1px;
+  font-family: Helvetica;
+  font-size: 13px;
+  /* font-weight: 500; */
+  color: #000;
+  letter-spacing: 1px;
+  text-decoration: none;
+  line-height: 60px;
+
+}
+
+header nav ul li a:hover img{
+    opacity: 0.2;
+}
+
+header nav ul li a img{
+  height: 40px;
+  width: auto;
+  margin-top: 10px;
+}
+
+.icon{
+  font-size: 1.4em;
+  line-height: 60px;
+}
+
+
+/* content -------------------------------------------------*/
+.page{
+  background: url(../img/Index_Main2.png);
+  background-repeat: no-repeat;
+}
+
+/* .main{
+  position: relative;
+} */
+
+
+
+
+.main p{
+  position: absolute;
+  top: 50%;
+   left: 50%;
+   -ms-transform: translate(-50%,-50%);
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   margin:0;
+   padding:0;
+  font-family: Avenir Next;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  color: #FFF;
+  /* letter-spacing: 1px; */
+  text-decoration: none;
+  line-height: 60px;
+  z-index: 80
+}
+
+
+.eventbutton{
+  position: absolute;
+  /* z-index: 80; */
+  float: left;
+  width: 430px;
+}
+
+
+/* ログインページ------------------------------------------------------- */
+
+.login-page {
+  width: 430px;
+  /* padding: 8% 0 0; */
+  float: right;
+  /* position: absolute; */
+  z-index:80;
+  position: absolute;
+}
+
+
+.form {
+  /* position: relative; */
+  z-index: 1;
+  background-color: rgba(255,249,231,0.7);
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 40.5px;
+  text-align: center;
+  margin-right: 20px;
+  bottom: 0;
+  right: 0;
+  left: 600;
+  position: absolute;
+}
+.form input {
+  font-family: "Helvetica";
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 11px;
+}
+.form button {
+  font-family: "Helvetica";
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #FDD007;
+  width: 100%;
+  border: 0;
+  padding: 17px;
+  color: #000;
+  font-size: 12px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: #000;
+  font-size: 11px;
+}
+.form .message a {
+  color: #000;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+
+/* Event -----------------------------------------------*/
+.Eventdiv{
+  background: url(../img/Event_Main.png);
+  background-repeat: no-repeat;
+  margin-top: 0px;
+  padding: 80px 0px 0px 0px;
+}
+
+
+.Event {
+    background-color:  rgba(255,249,231,0.7);
+    padding: 30px 0px 0px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 80px;
+  }
+
+.intro h1{
+    width: 78px;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 5px;
+    left: 50%;
+    color: #000000;
+    font-family: Helvetica;
+    font-size: 24px;
+    line-height: 29px;
+    /* text-align: center; */
+    border-bottom: solid 6px black;
+    padding-bottom: 5px;
+}
+  }
+
+
+  .intro1{
+    /* margin-left: 108px; */
+    /* margin-right: 50px; */
+    display: flex;
+    margin: 20px auto;
+    margin-top: 90px;
+    /* padding-top: 120px; */
+    /* padding-bottom: 120px; */
+  }
+
+  .introtext1{
+    margin-left: 108px;
+    margin-right: 445px;
+    margin-top: 80px;
+    padding-top: 100px;
+  }
+
+  .introtext1 h2{
+    height: 20px;
+    width: 361px;
+    color: #000000;
+    font-family: "Hiragino Kaku Gothic Pro";
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .introtext1 h3 {
+  margin-top: 30px;
+	height: 110px;
+	width: 321px;
+	color: #333333;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 13px;
+	line-height: 22px;
+}
+
+  .introimg1 img{
+    margin-right: 300px;
+    padding-top: 50px;
+  }
