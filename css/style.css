@@ -7,52 +7,88 @@ body{
     background-color: #fff;
 }
 
-
-a:hover, a:active{
-    color: #ccc;
-    text-decoration: none;
-}
+/* animation ------------*/
 
 a:hover img, a:active img{
   text-decoration: none;
 	opacity: 0.7;
 }
 
+a:hover i, a:active i{
+  text-decoration: none;
+	opacity: 0.7;
+}
 
-/* header -------------------------------------------------*/
+.snip1135 * {
+  box-sizing: border-box;
+}
+
+.snip1135 a {
+  color: #000;
+  position: relative;
+  text-decoration: none;
+}
+.snip1135 a:before,
+.snip1135 a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1135 a:before {
+  bottom: 0;
+  display: block;
+  height: 8px;
+  width: 0%;
+  content: "";
+  background-color: #000;
+}
+.snip1135 a:after {
+  left: 0;
+  top: 0;
+  /* padding: 0.5em 0; */
+  position: absolute;
+  content: attr(data-hover);
+  color: #000;
+  white-space: nowrap;
+  max-width: 0%;
+  overflow: hidden;
+}
+.snip1135 a:hover:before,
+.snip1135 .current a:before {
+  opacity: 1;
+  width: 95%;
+}
+.snip1135 a:hover:after,
+.snip1135 .current a:after {
+  max-width: 95%;
+}
+
+.snip1135 .noanim a:before,
+.snip1135 .noanim a:after {
+  bottom: 0;
+  display: block;
+  height: 0px;
+  width: 0%;
+  content: "";
+  background-color: #000;
+}
+
+
+/* header ------------------------------------*/
 header{
   width: 100%;
   height: 60px;
-  position: relative;
+  position: fixed;
   opacity: 1;
-  /* z-index: 50; */
+  z-index: 50;
 }
-/*
-header h1{
-    width: 230px;
-    height: 60px;
-    background-color: #FDD007;
-    margin: 23px auto 20px;
-    transform: translateX(-20px);
-    padding: 0 1px;
-    font-family: "Rounded Mplus 1c";
-    font-size: 26px;
-    font-weight: 500;
 
-    letter-spacing: 0.1rem;
-    padding-bottom: 2px;
-    transform: translate(20px);
-} */
-
-/* header h1 a{
-  text-decoration: none;
-  color: #4c4747;
-} */
 
 header nav{
   width: 100%;
   height: 60px;
   background-color: #FDD007;
+
 }
 
 header nav .container{
@@ -69,6 +105,7 @@ header nav ul{
     display: flex;
     justify-content: space-between;
     margin: auto;
+
 }
 
 header nav ul li a{
@@ -76,7 +113,6 @@ header nav ul li a{
   padding: 0 1px;
   font-family: Helvetica;
   font-size: 13px;
-  /* font-weight: 500; */
   color: #000;
   letter-spacing: 1px;
   text-decoration: none;
@@ -100,20 +136,24 @@ header nav ul li a img{
 }
 
 
-/* content -------------------------------------------------*/
-.page{
-  background: url(../img/Index_Main2.png);
-  background-repeat: no-repeat;
+/* home ---------------------------------------------------------------*/
+
+
+.main{
+  position: relative;
 }
 
-/* .main{
-  position: relative;
-} */
+.mainimg{
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../img/Index_Main2.png);
+}
 
 
-
-
-.main p{
+.maintext p{
   position: absolute;
   top: 50%;
    left: 50%;
@@ -127,77 +167,134 @@ header nav ul li a img{
   font-weight: 700;
   font-style: italic;
   color: #FFF;
-  /* letter-spacing: 1px; */
   text-decoration: none;
   line-height: 60px;
-  z-index: 80
+  z-index: 80;
+  letter-spacing: 0.1rem;
 }
 
+/* イベント詳細------------------------------ */
 
-.eventbutton{
+.reserve{
+  width: 294px;
+  background-color: rgba(255,249,231,0.7);
   position: absolute;
-  /* z-index: 80; */
-  float: left;
-  width: 430px;
+  bottom: 30px;
+  left: 30px;
+
 }
 
-
-/* ログインページ------------------------------------------------------- */
-
-.login-page {
-  width: 430px;
-  /* padding: 8% 0 0; */
-  float: right;
-  /* position: absolute; */
-  z-index:80;
-  position: absolute;
+.reservetext h3{
+  	color: #000000;
+  	font-family: "Hiragino Kaku Gothic Pro";
+  	font-size: 15px;
+  	line-height: 23px;
+    padding-top: 28px;
+    text-align: center;
 }
 
+.reserve p{
+	color: #000000;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 11px;
+	line-height: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.reservebutton0{
+  width: 170px;
+  height: 50px;
+  background-color: #FDD007;
+  margin-top: 15px;
+  margin: 15px auto;
+  margin-bottom: 40px;
+  box-shadow:0 0 8px gray;
+}
+
+.reservebutton0 p{
+  	color: #000000;
+  	font-family: "Hiragino Kaku Gothic Pro";
+  	font-size: 12px;
+}
+
+.reservebutton0 a{
+  text-decoration: none;
+  color: #000000;
+
+}
+
+/* ログイン----------------------- */
+
+.login-form h3{
+  color: #000000;
+  font-family: "Hiragino Kaku Gothic Pro";
+  font-size: 15px;
+  line-height: 23px;
+  text-align: center;
+}
 
 .form {
-  /* position: relative; */
   z-index: 1;
   background-color: rgba(255,249,231,0.7);
-  max-width: 430px;
+  max-width: 350px;
   margin: 0 auto;
-  padding: 40.5px;
+  padding: 30px 40px 35px 40px;
   text-align: center;
-  margin-right: 20px;
-  bottom: 0;
-  right: 0;
-  left: 600;
+  margin-right: 30px;
   position: absolute;
+  right: 0px;
+  bottom: 30px;
 }
 .form input {
   font-family: "Helvetica";
   outline: 0;
-  background: #fff;
+  background: rgba(255,249,231,0);
   width: 100%;
-  border: 0;
-  margin: 0 0 15px;
+  border: none;
+  border-bottom: solid 0.5px black;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 11px;
+  font-size: 15px;
 }
+
+
+.new{
+  display: flex;
+  padding-top: 5px;
+  margin-top: 5px;
+  margin-left: 35px;
+  margin-right: 20px;
+  color: #000000;
+  font-family: "Hiragino Kaku Gothic Pro";
+  font-size: 11px;
+  line-height: 18px;
+}
+
 .form button {
   font-family: "Helvetica";
   text-transform: uppercase;
-  outline: 0;
-  background-color: #FDD007;
-  width: 100%;
-  border: 0;
   padding: 17px;
   color: #000;
   font-size: 12px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
   cursor: pointer;
+  width: 170px;
+  height: 50px;
+  background-color: #FDD007;
+  margin-top: 15px;
+  margin: 15px 0px 0px 20px;
+  box-shadow:0 0 8px gray;
+  border: none;
 }
 
 .form .message {
-  margin: 15px 0 0;
+  margin: 15px 0px;
   color: #000;
   font-size: 11px;
+  padding-top: 8px;
+  text-align: center;
+
+
 }
 .form .message a {
   color: #000;
@@ -207,18 +304,20 @@ header nav ul li a img{
   display: none;
 }
 
-/* Event -----------------------------------------------*/
+/* Event -------------ーーーーーーー----------------------------------*/
 .Eventdiv{
-  background: url(../img/Event_Main.png);
+  background: url(../img/gray_singer8.jpg);
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   margin-top: 0px;
-  padding: 80px 0px 0px 0px;
+  padding: 140px 0px 80px 0px;
 }
 
 
 .Event {
     background-color:  rgba(255,249,231,0.7);
-    padding: 30px 0px 0px;
+    padding: 30px 0px 30px;
     border-radius: 12px;
     max-width: 900px;
     margin: 0 auto;
@@ -235,51 +334,644 @@ header nav ul li a img{
     font-family: Helvetica;
     font-size: 24px;
     line-height: 29px;
-    /* text-align: center; */
     border-bottom: solid 6px black;
     padding-bottom: 5px;
-}
-  }
-
+    }
 
   .intro1{
-    /* margin-left: 108px; */
-    /* margin-right: 50px; */
+    width: 300px;
     display: flex;
-    margin: 20px auto;
-    margin-top: 90px;
-    /* padding-top: 120px; */
-    /* padding-bottom: 120px; */
   }
 
   .introtext1{
+    width: 300px;
     margin-left: 108px;
-    margin-right: 445px;
-    margin-top: 80px;
-    padding-top: 100px;
+    padding-top: 116px;
+    /* float: left; */
   }
 
   .introtext1 h2{
-    height: 20px;
-    width: 361px;
+    width: 360px;
     color: #000000;
     font-family: "Hiragino Kaku Gothic Pro";
     font-size: 20px;
     line-height: 30px;
     text-align: center;
+    /* float: left; */
+    background: #FFF;
+    /* margin-bottom: 28px */
   }
 
-  .introtext1 h3 {
-  margin-top: 30px;
+  .introtext1 p {
 	height: 110px;
 	width: 321px;
 	color: #333333;
 	font-family: "Hiragino Kaku Gothic Pro";
 	font-size: 13px;
 	line-height: 22px;
+  margin-top: 28px;
 }
 
-  .introimg1 img{
-    margin-right: 300px;
-    padding-top: 50px;
+.introimg1 img{
+  /* float: right; */
+  /* padding-top: 50px; */
+  margin-top: 115px;
+  margin-right: 108px;
+  margin-left: 80px;
+}
+
+.intro2{
+  width: 300px;
+  /* float: left; */
+  padding-top: 90px;
+  display: flex;
+}
+
+.introimg2 img{
+/* float: left; */
+margin-left: 125px;
+}
+
+.introtext2{
+  /* width: 300px; */
+  margin-left: 66px;
+  /* padding-top: 10px; */
+  /* float: right; */
+}
+
+.introtext2 h2{
+  width: 240px;
+  color: #000000;
+  font-family: "Hiragino Kaku Gothic Pro";
+  font-size: 20px;
+  line-height: 30px;
+  /* text-align: center; */
+  /* float: right; */
+  background: #FFF;
+  margin-bottom: 28px
+}
+
+.introtext2 p {
+/* height: 110px; */
+width: 321px;
+color: #333333;
+font-family: "Hiragino Kaku Gothic Pro";
+font-size: 13px;
+line-height: 22px;
+}
+
+.intro3{
+  margin-top: 90px;
+  width: 300px;
+  /* float: left; */
+  display: flex;
+}
+
+.introtext3{
+  width: 300px;
+  margin-left: 108px;
+  /* padding-top: 20px; */
+  float: left;
+}
+
+.introtext3 h2{
+  width: 361px;
+  color: #000000;
+  font-family: "Hiragino Kaku Gothic Pro";
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  /* float: left; */
+  background: #FFF;
+  margin-bottom: 28px
+}
+
+.introtext3 p {
+height: 110px;
+width: 321px;
+color: #333333;
+font-family: "Hiragino Kaku Gothic Pro";
+font-size: 13px;
+line-height: 22px;
+}
+
+.introimg3 img{
+margin-right: 108px;
+margin-left: 80px;
+
+}
+
+/* イベント紹介---------------------------- */
+
+#overviewsection{
+  margin-top: 120px;
+  text-align: center;
+  /* height: 300px; */
+}
+
+.overview p{
+  margin-left: 108px;
+  margin-top: 40px;
+	height: 300px;
+	width: 694px;
+	color: #333333;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 15px;
+	line-height: 30px;
+	text-align: left;
+}
+
+/* 次回のイベント----------------------- */
+
+.nextevent h2 {
+	color: #000000;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.nexteventcontent{
+  display: flex;
+  margin-top: 70px;
+}
+
+.nexteventimg{
+  margin-left: 108px;
+  margin-top: 20px;
+}
+
+.nexteventtext {
+	color: #333333;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 13px;
+	line-height: 25px;
+  margin-right: 108px;
+  margin-left: 66px;
+}
+
+.reservation{
+  width: 500px;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 50px;
+  padding-bottom: 28px;
+}
+
+.reservation h3{
+  	color: #000000;
+  	font-family: "Hiragino Kaku Gothic Pro";
+  	font-size: 15px;
+  	line-height: 23px;
+    padding-top: 28px;
+    text-align: center;
+}
+
+.reservation p{
+	color: #000000;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 11px;
+	line-height: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.reservation a{
+  text-decoration: underline;
+  color: #000000;
+
+}
+
+.price{
+  display: flex;
+}
+
+.playerprice{
+  margin-left: 35px;
+
+}
+
+.listenerprice{
+  margin-left: 15px;
+}
+
+.listenerprice p, .playerprice p{
+  text-align: center;
+}
+
+.pricedetail{
+  text-align: left;
+  color: #000000;
+  font-family: "Hiragino Kaku Gothic Pro";
+  font-size: 11px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  /* text-align: center; */
+  /* padding-top: 15px; */
+}
+
+.reservebutton{
+  width: 170px;
+  height: 50px;
+  background-color: #FDD007;
+  margin-top: 15px;
+  margin: 15px auto;
+  box-shadow:0 0 8px gray;
+
+  /* margin-bottom: 40px; */
+}
+
+.reservebutton p{
+  	color: #000000;
+  	font-family: "Hiragino Kaku Gothic Pro";
+  	font-size: 12px;
+}
+
+.reservebutton a{
+  	text-decoration: none;
+}
+
+/* 特徴---------------------------------------------------------------------- */
+
+
+.character h2 {
+	color: #000000;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+  padding-bottom: 70px;
+}
+
+.bullet{
+  margin-left: 108px;
+  margin-bottom: 35px;
+  display: flex;
+  margin-right: 108px;
+}
+
+.bulletimg{
+  margin-top: 5px;
+}
+
+.bullettext{
+  margin-left: 22px;
+
+}
+
+.bullet h3{
+	color: #000;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.bullet h4{
+	color: #333333;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 13px;
+	line-height: 25px;
+}
+
+.categorytitle{
+	color: #000000;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 18px;
+	line-height: 27px;
+  margin-left: 100px;
+  margin-top: 65px;
+  margin-bottom: 30px;
+}
+
+hr {
+   margin-top: 90px;
+   width: 770px;
+   border: 1px dashed #646464;
+   margin-bottom: 50px;
+}
+
+/* 楽曲リスト -------------------*/
+
+
+.songlist h2 {
+	color: #000000;
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.songlistimg{
+  background-color: #fff;
+  text-align: center;
+  margin: 70px 108px 15px;
+  padding: 50px 0;
+  line-height: 30px;
+  color: #000000;
+  font-family: "Hiragino Kaku Gothic Pro";
+  font-size: 13px;
+  line-height: 30px;
+
+}
+
+/* MEMBERS------------------------------------------------------- */
+.Membersdiv{
+  background: url(../img/gray_band2.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 0px;
+  padding: 140px 0px 80px 0px;
+}
+
+
+.Members {
+    background-color:  rgba(255,249,231,0.7);
+    padding: 30px 0px 50px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 80px;
   }
+
+.memberintro h1{
+    position: absolute;
+    margin-left: -55px;
+    margin-top: 5px;
+    left: 50%;
+    color: #000000;
+    font-family: Helvetica;
+    font-size: 24px;
+    line-height: 29px;
+    border-bottom: solid 6px black;
+    padding-bottom: 5px;
+    }
+
+
+    .memberinfo{
+      /* width: 300px; */
+      padding-top: 40px;
+      display: flex;
+      /* margin-bottom: 70px; */
+    }
+
+    .memberimg img{
+    margin-left: 70px;
+    margin-top: 70px;
+    }
+
+    .membertext{
+      margin-left: 40px;
+      /* padding-top: 10px; */
+      margin-top: 70px;
+    }
+
+    .membertext h2{
+      	color: #000000;
+      	font-family: "Hiragino Kaku Gothic Pro";
+      	font-size: 15px;
+      	line-height: 23px;
+        font-weight: bold;
+    }
+
+    .membertext p {
+    margin-right: 70px;
+    color: #333333;
+    font-family: "Hiragino Kaku Gothic Pro";
+    font-size: 13px;
+    line-height: 22px;
+    margin-top: 15px;
+    }
+
+/* もっと見る------------------------- */
+
+    .grad-wrap{
+      margin-right: 70px;
+      color: #333333;
+      font-family: "Hiragino Kaku Gothic Pro";
+      font-size: 13px;
+      line-height: 22px;
+      margin-top: 15px;
+    }
+
+    .grad-btn {
+      margin-left: 43%;
+    }
+
+    .grad-item {
+      position: relative;
+      overflow: hidden;
+      height: 0px; /*隠した状態の高さ*/
+    }
+
+    .grad-item::before {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    .grad-trigger {
+      display: none; /*チェックボックスは常に非表示*/
+    }
+    .grad-trigger:checked + .grad-btn {
+      display: none; /*チェックされていたら、grad-btnを非表示にする*/
+    }
+    .grad-trigger:checked ~ .grad-item {
+      height: auto; /*チェックされていたら、高さを戻す*/
+    }
+    .grad-trigger:checked ~ .grad-item::before {
+      display: none; /*チェックされていたら、grad-itemのbeforeを非表示にする*/
+    }
+
+    .fas fa-angle-down{
+      font-size: 15px;
+    }
+
+/* メンバー二人目以降----------------- */
+
+    .memberinfo2{
+      padding-top: 30px;
+      display: flex;
+    }
+
+    .memberimg2 img{
+    margin-left: 70px;
+    }
+
+    .membertext2{
+      margin-left: 40px;
+    }
+
+    .membertext2 h2{
+      	color: #000000;
+      	font-family: "Hiragino Kaku Gothic Pro";
+      	font-size: 15px;
+      	line-height: 23px;
+        font-weight: bold;
+    }
+
+    .membertext2 p {
+    margin-right: 70px;
+    color: #333333;
+    font-family: "Hiragino Kaku Gothic Pro";
+    font-size: 13px;
+    line-height: 22px;
+    margin-top: 15px;
+    }
+
+/* DISCOGRAPHY----------------------------------------------------------- */
+.discographydiv{
+  background: url(../img/Event_Main.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 0px;
+  padding: 140px 0px 80px 0px;
+}
+
+
+.discography {
+    background-color:  rgba(255,249,231,0.7);
+    padding: 30px 0px 30px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 80px;
+  }
+
+.discographyintro h1{
+    position: absolute;
+    margin-left: -80px;
+    margin-top: 5px;
+    left: 50%;
+    color: #000000;
+    font-family: Helvetica;
+    font-size: 24px;
+    line-height: 29px;
+    border-bottom: solid 6px black;
+    padding-bottom: 5px;
+    }
+
+
+/* BLOG----------------------------------------------------------- */
+
+.blogdiv{
+  background: url(../img/gray_singer2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 0px;
+  padding: 140px 0px 0px 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.blog {
+    background-color:  rgba(255,249,231,0.7);
+    padding: 30px 0px 50px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 80px;
+  }
+
+.blogintro h1{
+    /* width: 78px; */
+    position: absolute;
+      margin-left: -30px;
+    margin-top: 5px;
+    left: 50%;
+    color: #000000;
+    font-family: Helvetica;
+    font-size: 24px;
+    line-height: 29px;
+    /* text-align: center; */
+    border-bottom: solid 6px black;
+    padding-bottom: 5px;
+    }
+
+.bloginfo{
+  position: relative;
+}
+
+.bloginfo p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding-top: 90px;
+  text-align: center;
+
+}
+
+.bloginfo img{
+
+  padding-left: 79px;
+  padding-top: 110px;
+}
+
+/* ACCESS----------------------------------------------------------- */
+.accessdiv{
+  background: url(../img/gray_syugou09.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 0px;
+  padding: 140px 0px 80px 0px;
+
+}
+
+.access {
+    background-color:  rgba(255,249,231,0.7);
+    padding: 30px 0px 30px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 80px;
+  }
+
+.accessintro h1{
+    position: absolute;
+      margin-left: -50px;
+    margin-top: 5px;
+    left: 50%;
+    color: #000000;
+    font-family: Helvetica;
+    font-size: 24px;
+    line-height: 29px;
+    border-bottom: solid 6px black;
+    padding-bottom: 5px;
+    }
+
+    .accessintro p{
+      margin:0;
+      padding-top: 90px;
+      text-align: center;
+    	color: #000000;
+    	font-family: "Hiragino Kaku Gothic Pro";
+    	font-size: 13px;
+    	line-height: 22px;
+    }
+
+    .ggmap {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin: 40px 74px 30px 74px;
+    }
+
+    .ggmap iframe,
+    .ggmap object,
+    .ggmap embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
