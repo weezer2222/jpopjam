@@ -74,6 +74,7 @@ a:hover i, a:active i{
 }
 
 
+
 /* header ------------------------------------*/
 header{
   width: 100%;
@@ -88,16 +89,15 @@ header nav{
   width: 100%;
   height: 60px;
   background-color: #FDD007;
-
 }
 
-header nav .container{
+/* header nav .container{
     width: 100%;
     height: 60px;
     margin: 0 auto;
     display: flex;
 
-}
+} */
 
 header nav ul{
     width: 846.49px;
@@ -135,47 +135,218 @@ header nav ul li a img{
   line-height: 60px;
 }
 
+/* レスポンシブ -------------------*/
 
-/* home ---------------------------------------------------------------*/
-
-
-.main{
-  position: relative;
+.mobile-menu{
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 8px;
 }
 
-.mainimg{
+.mobile-menu img{
+  width: 30px;
+  height: auto;
+}
+
+.mobile-close{
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 8px;
+}
+
+.mobile-close img{
+  width: 30px;
+  height: auto;
+}
+
+.navlogo{
+  display: none;
+  position: absolute;
+  left: 20px;
+  top: 9px;
+}
+
+.navlogo img{
+  width: 90px;
+  height: auto;
+}
+
+
+
+/* スマホで見た目を変えたい情報だけ上書きする。それ以外は書く必要なし */
+@media (max-width: 767px){
+  header{
+     height: 100vh;
+  }
+
+  /* header {
+    background-color: #FDD007;
+    height: 47px;
+    display: none;
+
+  } */
+
+  .beforeopen{
+    width: 100%;
+    height: 47px;
+    background-color: #FDD007;
+  }
+
+  .mobile-menu{
+    display: block;
+  }
+
+  .navlogo{
+    display: block;
+  }
+
+
+  header nav{
+    width: 100%;
+    height: 100vh;
+    background-color: #FDD007;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s, visibility 0s, ease 1s;
+  }
+  header nav.mobile-menu-open{
+    transition-delay: 0s;
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  header nav .container{
+    width:100%;
+    height: 100vh;
+    margin: 0;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .mobile-close{
+    display: block;
+  }
+  /* header nav h2{
+    width: 100%;
+    margin-top: 80px;
+    text-align: center;
+  } */
+
+  header nav ul{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: block;
+  }
+
+  /* header nav ul a{
+    padding: 0;
+  } */
+  header nav ul li.current a{
+    border-bottom: none;
+  }
+
+  .snip1135 a{
+    padding: 0;
+    font-size: 19px;
+    letter-spacing: 1.46px;
+    line-height: 38px;
+    margin-bottom: 10px;
+  }
+
+  .snip1135{
+    margin-top: 70px;
+  }
+
+  .noanim img{
+    display: none;
+  }
+
+  .noanim a{
+    margin-bottom: 0px;
+  }
+
+  .snip1135 a:before {
+    display: none;
+  }
+  .snip1135 a:after {
+    display: none;
+  }
+
+  a:hover, a:active{
+    text-decoration: none;
+  	opacity: 0.7;
+  }
+
+  #nav-open {
+    display:none;
+  }
+
+
+
+}
+/* home ---------------------------------------------------------------*/
+
+ /* .moviediv{
+   position: relative;
+   width: 100%;
+  height: 100%;
+  background: url(../overlays/01.png);
+ } */
+
+  .movie {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 120px; /* 現プレイヤーでは不要？ */
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background: url(../overlays/01.png);
+      /* z-index: 50; */
+
+  }
+
+  .movie iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+
+
+
+/* home responsive */
+@media (max-width: 767px){
+.movie {
+    display: none;
+}
+
+.indexrespimg{
+  background: url(../img/gray_Main1.jpg);
+  background-size: cover;
+  background-position: center;
   width: 100vw;
   height: 100vh;
   min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-image: url(../img/Index_Main2.png);
 }
 
-
-.maintext p{
-  position: absolute;
-  top: 50%;
-   left: 50%;
-   -ms-transform: translate(-50%,-50%);
-   -webkit-transform: translate(-50%,-50%);
-   transform: translate(-50%,-50%);
-   margin:0;
-   padding:0;
-  font-family: Avenir Next;
-  font-size: 30px;
-  font-weight: 700;
-  font-style: italic;
-  color: #FFF;
-  text-decoration: none;
-  line-height: 60px;
-  z-index: 80;
-  letter-spacing: 0.1rem;
 }
 
 /* イベント詳細------------------------------ */
 
 .reserve{
+  z-index: 10;
   width: 294px;
   background-color: rgba(255,249,231,0.7);
   position: absolute;
@@ -339,49 +510,46 @@ header nav ul li a img{
     }
 
   .intro1{
-    width: 300px;
+    /* width: 300px; */
     display: flex;
   }
 
   .introtext1{
-    width: 300px;
-    margin-left: 108px;
+    /* width: 300px; */
+    margin-left: 80px;
     padding-top: 116px;
     /* float: left; */
   }
 
   .introtext1 h2{
-    width: 360px;
+    /* width: 360px; */
     color: #000000;
     font-family: "Hiragino Kaku Gothic Pro";
     font-size: 20px;
-    line-height: 30px;
+    /* line-height: 30px; */
     text-align: center;
     /* float: left; */
-    background: #FFF;
+    /* background-color: #FFF; */
     /* margin-bottom: 28px */
   }
 
   .introtext1 p {
-	height: 110px;
-	width: 321px;
 	color: #333333;
 	font-family: "Hiragino Kaku Gothic Pro";
 	font-size: 13px;
 	line-height: 22px;
   margin-top: 28px;
+  margin-left: 15px;
 }
 
 .introimg1 img{
-  /* float: right; */
-  /* padding-top: 50px; */
   margin-top: 115px;
-  margin-right: 108px;
-  margin-left: 80px;
+  margin-right: 80px;
+  margin-left: 50px;
 }
 
 .intro2{
-  width: 300px;
+  /* width: 300px; */
   /* float: left; */
   padding-top: 90px;
   display: flex;
@@ -394,26 +562,28 @@ margin-left: 125px;
 
 .introtext2{
   /* width: 300px; */
-  margin-left: 66px;
+  margin-left: 60px;
+  margin-right: 80px;
+
   /* padding-top: 10px; */
   /* float: right; */
 }
 
 .introtext2 h2{
-  width: 240px;
+  /* width: 240px; */
   color: #000000;
   font-family: "Hiragino Kaku Gothic Pro";
   font-size: 20px;
   line-height: 30px;
   /* text-align: center; */
   /* float: right; */
-  background: #FFF;
+  /* background: #FFF; */
   margin-bottom: 28px
 }
 
 .introtext2 p {
 /* height: 110px; */
-width: 321px;
+/* width: 321px; */
 color: #333333;
 font-family: "Hiragino Kaku Gothic Pro";
 font-size: 13px;
@@ -422,42 +592,40 @@ line-height: 22px;
 
 .intro3{
   margin-top: 90px;
-  width: 300px;
-  /* float: left; */
+  /* width: 300px; */
   display: flex;
 }
 
 .introtext3{
-  width: 300px;
-  margin-left: 108px;
+  /* width: 300px; */
+  margin-left: 81px;
   /* padding-top: 20px; */
   float: left;
 }
 
 .introtext3 h2{
-  width: 361px;
+  /* width: 361px; */
   color: #000000;
   font-family: "Hiragino Kaku Gothic Pro";
   font-size: 20px;
   line-height: 30px;
   text-align: center;
   /* float: left; */
-  background: #FFF;
+  /* background: #FFF; */
   margin-bottom: 28px
 }
 
 .introtext3 p {
-height: 110px;
-width: 321px;
 color: #333333;
 font-family: "Hiragino Kaku Gothic Pro";
 font-size: 13px;
 line-height: 22px;
+margin-left: 15px;
 }
 
 .introimg3 img{
-margin-right: 108px;
-margin-left: 80px;
+margin-right: 80px;
+margin-left: 50px;
 
 }
 
@@ -472,8 +640,7 @@ margin-left: 80px;
 .overview p{
   margin-left: 108px;
   margin-top: 40px;
-	height: 300px;
-	width: 694px;
+  margin-right: 108px;
 	color: #333333;
 	font-family: "Hiragino Kaku Gothic Pro";
 	font-size: 15px;
@@ -511,9 +678,10 @@ margin-left: 80px;
 }
 
 .reservation{
-  width: 500px;
+  margin-right: 200px;
+  margin-left: 200px;
   background-color: #fff;
-  margin: auto;
+  /* margin: auto; */
   margin-top: 50px;
   padding-bottom: 28px;
 }
@@ -645,7 +813,8 @@ margin-left: 80px;
 
 hr {
    margin-top: 90px;
-   width: 770px;
+   margin-right: 65px;
+   margin-left: 65px;
    border: 1px dashed #646464;
    margin-bottom: 50px;
 }
@@ -671,6 +840,246 @@ hr {
   font-family: "Hiragino Kaku Gothic Pro";
   font-size: 13px;
   line-height: 30px;
+
+}
+
+@media (max-width: 767px){
+.Eventdiv {
+    /* background-position:  -278px center; */
+  padding-bottom: 60px;
+  padding-top: 75px;
+}
+
+.Event{
+  margin: 0 15px;
+  max-width: 900px;
+  padding-bottom: 40px;
+}
+
+.intro h1{
+  width: 60px;
+  font-size: 18px;
+}
+
+
+
+.intro1{
+  display: block;
+  /* margin: auto; */
+  width: auto;
+}
+
+.introtext1{
+  margin: 0 7px 0 7px;
+  /* margin: auto; */
+  /* width: 767px; */
+  padding-top: 90px;
+  /* position: absolute; */
+}
+
+.introtext1 h2{
+  font-size: 16px;
+}
+
+.introtext1 p{
+  margin-left: 0;
+}
+
+.introimg1{
+  text-align: center;
+}
+
+.introimg1 img{
+  margin: 35px 0 0 0;
+  /* text-align: center; */
+}
+
+.intro2{
+  display: flex;
+  flex-direction: column-reverse;
+  padding-top: 75px;
+}
+
+.introtext2{
+  margin: 0 7px 0 7px;
+  /* width: 331px; */
+  text-align: center;
+}
+
+.introtext2 h2{
+  /* width:180px; */
+  font-size: 16px;
+  margin: 0 auto;
+  margin-bottom: 22px;
+}
+
+.introimg2 {
+  text-align: center;
+}
+
+.introimg2 img{
+  margin: 35px 23px 0;
+}
+
+.intro3{
+  display: block;
+  margin-top: 75px;
+}
+
+.introtext3{
+  margin-left: 7px;
+  text-align: center;
+}
+
+.introtext3 h2{
+  font-size: 16px;
+  margin: 0 auto;
+  margin-bottom: 22px;
+}
+
+.introtext3 p{
+  height: auto;
+}
+
+.introimg3{
+  text-align: center;
+}
+
+.introimg3 img{
+  margin: 35px 23px 0;
+}
+
+#overviewsection{
+  margin-top: 90px;
+}
+
+.overview img{
+  width: 150px;
+  height: auto;
+}
+
+.overview p{
+  font-size: 13px;
+  line-height: 22px;
+  /* width: 331px; */
+  margin-left: 7px;
+  margin-right: 7px;
+  padding-right: 7px;
+  margin-top: 30px;
+}
+
+hr {
+   margin-top: 67px;
+   margin-right: 8px;
+   margin-left: 8px;
+   border: 1px dashed #646464;
+   margin-bottom: 47px;
+}
+
+.nextevent h2{
+  font-size: 15px;
+}
+
+.nexteventcontent{
+  display: block;
+  margin-top: 35px;
+}
+
+.nexteventimg{
+  /* margin-left: 48px; */
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nexteventtext{
+  line-height: 22px;
+  /* width: 331px; */
+  /* margin-left: 7px;
+  margin-top: 25px; */
+  margin: 25px auto 0px;
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+.reservation{
+  margin-top: 45px;
+  margin-right: 28px;
+  margin-left: 28px;
+}
+
+.reservation p{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.price{
+  display: block;
+}
+
+.playerprice {
+  margin-left: 37px;
+  margin-right: 37px;
+}
+
+.listenerprice{
+  margin-left: 37px;
+  margin-right: 37px;
+}
+
+.reservebutton{
+  margin: 15px auto 0;
+}
+
+.character h2{
+  font-size: 15px;
+  padding-bottom: 40px;
+}
+
+.bullet{
+  margin-left: 7px;
+  /* margin-bottom: 35px; */
+  /* display: flex; */
+  margin-right: 7px;
+  margin-bottom: 20px;
+}
+
+.bulletimg{
+  margin-top: 2.5px;
+}
+
+.bullettext{
+  margin-left: 7px;
+}
+
+.bullet h3 {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.bullet h4{
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.categorytitle{
+	font-size: 15px;
+	line-height: 15px;
+  margin-left: 7px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.songlist h2{
+  font-size: 15px;
+  padding-bottom: 30px;
+}
+
+.songlistimg{
+  margin: 0px 7px 0px;
+
+}
 
 }
 
@@ -820,20 +1229,60 @@ hr {
     margin-top: 15px;
     }
 
+/* Community----------------------------------------------------------- */
+
+    .communitydiv{
+      position: relative;
+    }
+    .communityimg{
+      background: url(../img/gray_Main1.jpg);
+      background-size: cover;
+      background-position: center;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+    }
+
+
+      .communitytitle p{
+        position: absolute;
+        top: 50%;
+         left: 50%;
+         -ms-transform: translate(-50%,-50%);
+         -webkit-transform: translate(-50%,-50%);
+         transform: translate(-50%,-50%);
+         margin:0;
+         padding:0;
+        font-family: Avenir Next;
+        font-size: 30px;
+        font-weight: 700;
+        font-style: italic;
+        color: #FFF;
+        text-decoration: none;
+        line-height: 60px;
+        z-index: 80;
+        letter-spacing: 0.2rem;
+      }
+
+
+
+
 /* DISCOGRAPHY----------------------------------------------------------- */
 .discographydiv{
-  background: url(../img/Event_Main.png);
+  background: url(../img/gray_singer9.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   margin-top: 0px;
   padding: 140px 0px 80px 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 
 .discography {
     background-color:  rgba(255,249,231,0.7);
-    padding: 30px 0px 30px;
+    padding: 30px 0px 50px;
     border-radius: 12px;
     max-width: 900px;
     margin: 0 auto;
@@ -852,6 +1301,11 @@ hr {
     border-bottom: solid 6px black;
     padding-bottom: 5px;
     }
+
+.discopic{
+  padding-top: 110px;
+  text-align: center;
+}
 
 
 /* BLOG----------------------------------------------------------- */
